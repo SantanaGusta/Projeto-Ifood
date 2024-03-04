@@ -1,3 +1,4 @@
+import 'package:aifood/CustomWindgets/styles.dart';
 import 'package:flutter/material.dart';
 
 Widget customCard(double largura, double altura, Color color, String texto, String img) {

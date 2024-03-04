@@ -49,6 +49,7 @@ class _TelaInicioState extends State<TelaInicio> {
             ),
           ),
           Slide(),
+          
         ],
       ),
     );

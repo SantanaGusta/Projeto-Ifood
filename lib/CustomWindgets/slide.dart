@@ -13,8 +13,8 @@ class Slide extends StatefulWidget {
 class _SlideState extends State<Slide> {
   //objeto que define o controle das páginas
   PageController pageController = PageController();
-  List<double> progresso = [0.0, 0.0, 0.0];
-  int qtdPaginas = 3;
+  List<double> progresso = [0.0, 0.0, 0.0, 0.0];
+  int qtdPaginas = 4;
   int paginaAtual = 0;
   //método que é chamado antes da página ser construída
   @override
@@ -26,7 +26,7 @@ class _SlideState extends State<Slide> {
 
   //método para mudar de página peridioticamente
   nextPage() {
-    Timer.periodic(const Duration(seconds: 3), (timer) {
+    Timer.periodic(const Duration(seconds: 5), (timer) {
       int proximaPagina = paginaAtual + 1;
       if (proximaPagina >= qtdPaginas) {
         proximaPagina =0;
@@ -34,7 +34,7 @@ class _SlideState extends State<Slide> {
 
       pageController
           .animateToPage(proximaPagina,
-              duration: Duration(microseconds: 300), curve: Curves.linear)
+              duration: Duration(milliseconds: 300), curve: Curves.linear)
           .then((_) {
         setState(() {
           paginaAtual = proximaPagina;
@@ -101,17 +101,22 @@ class _SlideState extends State<Slide> {
               Container(
                 width: double.infinity,
                 height: 200,
-                color: Colors.red,
+                child: Image.asset('massa.gif'),
               ),
               Container(
                 width: double.infinity,
                 height: 200,
-                color: Colors.black,
+                child: Image.asset('pizza.gif'),
               ),
               Container(
                 width: double.infinity,
                 height: 200,
-                color: Colors.green,
+                child: Image.asset('sanduiche.gif'),
+              ),
+              Container(
+                width: double.infinity,
+                height: 200,
+                child: Image.asset('carne.gif'),
               ),
             ],
           ),
